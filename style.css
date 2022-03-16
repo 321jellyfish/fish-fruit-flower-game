@@ -45,5 +45,6 @@ input:disabled {
 }
 
 .selected {
-    border: gray, solid, 5px;
+    background-color: lightgray;
+    border-style: solid, gray, 5px;
 }

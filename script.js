@@ -18,11 +18,12 @@ startAgainButton.disabled = true;
 
 firstLetter.addEventListener("click", () => console.log("Kitten"));
 
-
-
 fruitButton.addEventListener("click", () => {
     console.log("Banana");
     fruitButton.classList.add("selected");
+    firstLetter.disabled = false;
+    submitButton.disabled = false;
+    startAgainButton.disabled = false;
 });
 
 flowerButton.addEventListener("click", () => {
