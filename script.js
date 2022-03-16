@@ -1,10 +1,14 @@
 /*Create categoryButtons*/
-const fishButton = document.querySelector('#fishButton');
-const fruitButton = document.querySelector('#fruitButton');
-const flowerButton = document.querySelector('#flowerButton');
-const first = document.querySelector('#first');
+const fishButton = document.querySelector("#fish-button");
+const fruitButton = document.querySelector("#fruit-button");
+const flowerButton = document.querySelector("#flower-button");
+const firstLetter = document.querySelector("#first-letter");
+const startAgainButton = document.querySelector("#start-again-button");
+const submitButton = document.querySelector("#submit-button");
 
-first.disabled = false;
+firstLetter.disabled = true;
+submitButton.disabled = true;
+startAgainButton.disabled = true;
 
 
 /*button.addEventListener('click', () => {
@@ -12,20 +16,19 @@ first.disabled = false;
   });*/
 
 
-first.addEventListener('click', function (e) => {
-    e.target.style.background = 'green';
-  });
+firstLetter.addEventListener("click", () => console.log("Kitten"));
 
 
 
-fruitButton.addEventListener('click', () => {
+fruitButton.addEventListener("click", () => {
     console.log("Banana");
+    fruitButton.classList.add("selected");
 });
 
-flowerButton.addEventListener('click', () => {
+flowerButton.addEventListener("click", () => {
     console.log("Tulip");
   });  
 
 /* Problems to solve:
 - make buttons clickable 
-- decide on design on buttons
+- decide on design on buttons*/

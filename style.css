@@ -43,3 +43,7 @@ input:disabled {
 :disabled {
     border-color: grey;
 }
+
+.selected {
+    border: gray, solid, 5px;
+}
