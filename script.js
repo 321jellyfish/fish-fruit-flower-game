@@ -5,6 +5,7 @@ const flowerButton = document.querySelector("#flower-button");
 const firstLetter = document.querySelector("#first-letter");
 const startAgainButton = document.querySelector("#start-again-button");
 const userGuesses = document.querySelector(".userGuesses");
+const firstLetterClue = document.querySelector("#first-letter-clue");
 
 // const submitButton = document.querySelector("#submit-button");
 
@@ -19,7 +20,9 @@ startAgainButton.disabled = true;
 
 let fruit = ["Apple", "Apricot", "Avocado", "Banana", "Blueberry", "Cherry"];
 
-firstLetter.addEventListener("click", () => console.log("Kitten"));
+firstLetter.addEventListener("click", () => {
+  firstLetterClue.textContent = computerFruit[0];
+});
 
 fishButton.addEventListener("click", () => {
   fishButton.classList.add("selected");
