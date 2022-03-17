@@ -4,6 +4,8 @@ const fruitButton = document.querySelector("#fruit-button");
 const flowerButton = document.querySelector("#flower-button");
 const firstLetter = document.querySelector("#first-letter");
 const startAgainButton = document.querySelector("#start-again-button");
+const userGuesses = document.querySelector(".userGuesses");
+
 // const submitButton = document.querySelector("#submit-button");
 
 const guessSubmit = document.querySelector('.guessSubmit');
@@ -25,7 +27,8 @@ fishButton.addEventListener("click", () => {
 
 fruitButton.addEventListener("click", () => {
   fruitButton.classList.add("selected");
-  // enableButtons();
+  enableButtons();
+  guessField.focus();
 
   let randomNumber = Math.floor((Math.random() * fruit.length));
   console.log(randomNumber);
@@ -38,6 +41,7 @@ guessSubmit.addEventListener("click", () => {
   const userGuess = guessField.value;
   if(userGuess === computerFruit){
     console.log("yay!");
+    userGuesses.textContent = "Correct, you got it!";
   }
 });
 

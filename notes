@@ -1,0 +1,16 @@
+
+Have all buttons disabled
+
+Select a category
+    Stop all other categories from being selected
+Randomly generate an item in the correct category
+Enable all buttons
+
+Get guess from user
+Tell the user if their guess is correct or not
+    if it's incorrect let them guess again
+    if it's correct, stop them making any more guesses, congratulate them
+
+If they press start again button:
+    deselect chosen category
+    reset all variables
