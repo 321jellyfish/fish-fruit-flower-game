@@ -9,6 +9,8 @@ const startAgainButton = document.querySelector("#start-again-button");
 const guessSubmit = document.querySelector('.guessSubmit');
 const guessField = document.querySelector('.guessField');
 
+let computerFruit = "";
+
 firstLetter.disabled = true;
 // submitButton.disabled = true;
 startAgainButton.disabled = true;
@@ -27,15 +29,19 @@ fruitButton.addEventListener("click", () => {
 
   let randomNumber = Math.floor((Math.random() * fruit.length));
   console.log(randomNumber);
-  let computerFruit = fruit[randomNumber];
+  computerFruit = fruit[randomNumber];
   console.log({computerFruit});
+  return computerFruit;
+});
+
+guessSubmit.addEventListener("click", () => {
   const userGuess = guessField.value;
-  if (userGuess === computerFruit){
+  if(userGuess === computerFruit){
     console.log("yay!");
   }
-
-
 });
+
+
 
 flowerButton.addEventListener("click", () => {
     flowerButton.classList.add("selected");
