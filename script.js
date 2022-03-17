@@ -18,7 +18,16 @@ firstLetter.disabled = true;
 // submitButton.disabled = true;
 startAgainButton.disabled = true;
 
-let fruit = ["Apple", "Apricot", "Avocado", "Banana", "Blueberry", "Cherry"];
+let fish=["Anchovy", "Bass", "Carp", "Catfish", "Clam", "Cod", "Crab", "Flounder", "Haddock", "Hake", "Halibut", "Herring", "Lobster",
+"Mackerel", "Oyster", "Perch", "Plaice", "Pollock", "Rainbow trout", "Salmon", "Sardine", "Scallop", "Shark", "Swordfish", "Tuna",
+"Whiting"];
+
+let fruit=["Apple", "Apricot", "Avocado", "Banana", "Blueberry", "Cherry", "Cranberry", "Currant", "Date", "Fig", "Grape", "Grapefruit", "Kiwi", 
+"Lemon", "Lime", "Lychee", "Mango", "Nectarine", "Orange", "Papaya", "Passion fruit", "Peach", "Pear", "Pineapple", "Plum", "Pomegranate", "Raspberry",
+"Strawberry", "Tangerine", "Watermelon"];
+
+let flower=["Anemone", "Aster", "Azalea", "Buttercup", "Carnation", "Chrysanthemum", "Crocus", "Daffodil", "Dahlia", "Hyacinth", "Lilac", "Lily",
+"Marigold", "Peony", "Pansy", "Snapdragon", "Tulip"];
 
 firstLetter.addEventListener("click", () => {
   firstLetterClue.textContent = computerFruit[0];
