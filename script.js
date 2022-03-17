@@ -67,7 +67,14 @@ flowerButton.addEventListener("click", () => {
   });  
 
 
-
+startAgainButton.addEventListener("click", () => {
+  firstLetter.disabled = true;
+  startAgainButton.disabled = true;
+  guessField.value = "";
+  userGuesses.textContent = "";
+  firstLetterClue.textContent = "";
+  fruitButton.classList.toggle("selected");
+})
 
 
 function enableButtons (){
