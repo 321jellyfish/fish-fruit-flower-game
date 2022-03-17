@@ -29,6 +29,8 @@ let fruit=["Apple", "Apricot", "Avocado", "Banana", "Blueberry", "Cherry", "Cran
 let flower=["Anemone", "Aster", "Azalea", "Buttercup", "Carnation", "Chrysanthemum", "Crocus", "Daffodil", "Dahlia", "Hyacinth", "Lilac", "Lily",
 "Marigold", "Peony", "Pansy", "Snapdragon", "Tulip"];
 
+
+
 firstLetter.addEventListener("click", () => {
   firstLetterClue.textContent = computerFruit[0];
 });
