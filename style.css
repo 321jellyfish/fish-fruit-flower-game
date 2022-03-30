@@ -35,7 +35,8 @@ input {
 
 
 input:disabled {
-    background-color: pink;
+    opacity: 0.4;
+    border-radius: 2px;
 }
 
 :disabled {

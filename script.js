@@ -106,6 +106,7 @@ startAgainButton.addEventListener("click", () => {
   fishButton.disabled = false;
   fruitButton.disabled = false;
   flowerButton.disabled = false;
+  guessSubmit.disabled = true;
 })
 
 
