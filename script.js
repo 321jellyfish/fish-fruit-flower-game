@@ -34,7 +34,7 @@ let flowerArray=["Anemone", "Aster", "Azalea", "Buttercup", "Carnation", "Chrysa
 
 
 firstLetter.addEventListener("click", () => {
-  firstLetterClue.textContent = computerChoice[0];
+  firstLetterClue.textContent = `First letter: ${computerChoice[0]}`;
   guessField.focus();
 });
 
