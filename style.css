@@ -77,3 +77,6 @@ p {
     border-color: black;
 }
 
+.guessField {
+    padding: 5px;
+}
