@@ -1,6 +1,7 @@
 body {
     font-family:'Courier New', Courier, monospace;
     text-align: center;    
+    box-sizing: border-box;
 }
 
 img {
@@ -16,7 +17,6 @@ h1 {
     display: flex;
     justify-content: center;
     padding: 30px;
-    gap: 20px;
 }
 
 button {
