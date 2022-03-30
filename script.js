@@ -86,6 +86,7 @@ guessSubmit.addEventListener("click", () => {
       firstLetter.disabled = true;
       guessSubmit.disabled = true;
       guessField.disabled = true;
+      firstLetterClue.textContent = "";
       counter++;
     } else if((userGuess === "")||(userGuess === " ")){
       guessResponses.textContent = "Please submit a guess";
