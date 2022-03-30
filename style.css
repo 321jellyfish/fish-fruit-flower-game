@@ -33,6 +33,7 @@ input {
     margin-bottom: 1em;
 }
 
+
 input:disabled {
     background-color: pink;
 }

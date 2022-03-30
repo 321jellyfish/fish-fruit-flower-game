@@ -12,9 +12,7 @@ const firstLetterClue = document.querySelector("#first-letter-clue");
 const guessSubmit = document.querySelector('.guessSubmit');
 const guessField = document.querySelector('.guessField');
 
-let computerFish = "";
-let computerFruit = "";
-let computerFlower = "";
+let computerChoice = "";
 
 guessField.disabled = true;
 guessSubmit.disabled = true;
@@ -22,73 +20,58 @@ firstLetter.disabled = true;
 // submitButton.disabled = true;
 startAgainButton.disabled = true;
 
-let fish=["Anchovy", "Bass", "Carp", "Catfish", "Clam", "Cod", "Crab", "Flounder", "Haddock", "Hake", "Halibut", "Herring", "Lobster",
+let fishArray=["Anchovy", "Bass", "Carp", "Catfish", "Clam", "Cod", "Crab", "Flounder", "Haddock", "Hake", "Halibut", "Herring", "Lobster",
 "Mackerel", "Oyster", "Perch", "Plaice", "Pollock", "Rainbow trout", "Salmon", "Sardine", "Scallop", "Shark", "Swordfish", "Tuna",
 "Whiting"];
 
-let fruit=["Apple", "Apricot", "Avocado", "Banana", "Blueberry", "Cherry", "Cranberry", "Currant", "Date", "Fig", "Grape", "Grapefruit", "Kiwi", 
+let fruitArray=["Apple", "Apricot", "Avocado", "Banana", "Blueberry", "Cherry", "Cranberry", "Currant", "Date", "Fig", "Grape", "Grapefruit", "Kiwi", 
 "Lemon", "Lime", "Lychee", "Mango", "Nectarine", "Orange", "Papaya", "Passion fruit", "Peach", "Pear", "Pineapple", "Plum", "Pomegranate", "Raspberry",
 "Strawberry", "Tangerine", "Watermelon"];
 
-let flower=["Anemone", "Aster", "Azalea", "Buttercup", "Carnation", "Chrysanthemum", "Crocus", "Daffodil", "Dahlia", "Hyacinth", "Lilac", "Lily",
+let flowerArray=["Anemone", "Aster", "Azalea", "Buttercup", "Carnation", "Chrysanthemum", "Crocus", "Daffodil", "Dahlia", "Hyacinth", "Lilac", "Lily",
 "Marigold", "Peony", "Pansy", "Snapdragon", "Tulip"];
 
 
 
 firstLetter.addEventListener("click", () => {
   if(fishButton.disabled === false){
-    firstLetterClue.textContent = computerFish[0];
+    firstLetterClue.textContent = computerChoice[0];
   }
   if(fruitButton.disabled === false){
-    firstLetterClue.textContent = computerFruit[0];
+    firstLetterClue.textContent = computerChoice[0];
   }
   if(flowerButton.disabled === false){
-    firstLetterClue.textContent = computerFlower[0];
+    firstLetterClue.textContent = computerChoice[0];
   }
 });
 
 fishButton.addEventListener("click", () => {
-  fishButton.classList.add("selected");
+  //fishButton.classList.add("selected");
   enableButtons();
   guessField.focus();
   fruitButton.disabled = true;
   flowerButton.disabled = true;
 
-  let randomNumber = Math.floor((Math.random() * fish.length));
-  console.log(randomNumber);
-  computerFish = fish[randomNumber];
-  console.log({computerFish});
-  return computerFish;
-
+  chooseAnswer(fishArray);
 });
 
 fruitButton.addEventListener("click", () => {
-  fruitButton.classList.add("selected");
+  //fruitButton.classList.add("selected");
   enableButtons();
   guessField.focus();
   fishButton.disabled = true;
   flowerButton.disabled = true;
-
-  let randomNumber = Math.floor((Math.random() * fruit.length));
-  console.log(randomNumber);
-  computerFruit = fruit[randomNumber];
-  console.log({computerFruit});
-  return computerFruit;
+  chooseAnswer(fruitArray);
 });
 
 flowerButton.addEventListener("click", () => {
-    flowerButton.classList.add("selected");
+    //flowerButton.classList.add("selected");
     enableButtons();
     guessField.focus();
     fruitButton.disabled = true;
     fishButton.disabled = true;
   
-    let randomNumber = Math.floor((Math.random() * flower.length));
-    console.log(randomNumber);
-    computerFlower = flower[randomNumber];
-    console.log({computerFlower});
-    return computerFlower;
-    
+    chooseAnswer(flowerArray);
   });  
 
 guessSubmit.addEventListener("click", () => {
@@ -128,8 +111,17 @@ startAgainButton.addEventListener("click", () => {
 
 function enableButtons (){
   firstLetter.disabled = false;
-  // submitButton.disabled = false;
   startAgainButton.disabled = false;
+  guessField.disabled = false;
+  guessSubmit.disabled = false;    
+}
+
+function chooseAnswer(answerArray){
+  let randomNumber = Math.floor((Math.random() * answerArray.length));
+  console.log(randomNumber);
+  computerChoice = answerArray[randomNumber];
+  console.log({computerChoice});
+  return computerChoice;
 }
 
 
