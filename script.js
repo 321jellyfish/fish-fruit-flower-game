@@ -39,10 +39,14 @@ fishButton.addEventListener("click", () => {
   fishButton.classList.add("selected");
 });
 
+fishButton.disabled = true;
+
 fruitButton.addEventListener("click", () => {
   fruitButton.classList.add("selected");
   enableButtons();
   guessField.focus();
+  fishButton.disabled = true;
+  flowerButton.disabled = true;
 
   let randomNumber = Math.floor((Math.random() * fruit.length));
   console.log(randomNumber);
