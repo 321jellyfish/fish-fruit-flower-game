@@ -68,17 +68,10 @@ flowerButton.addEventListener("click", () => {
 
 guessSubmit.addEventListener("click", () => {
     const userGuess = guessField.value;
-    if(userGuess === computerFish){
-      console.log("yay!");
+    if(userGuess === computerChoice){
       userGuesses.textContent = "Correct, you got it!";
-    }
-    if(userGuess === computerFruit){
-      console.log("yay!");
-      userGuesses.textContent = "Correct, you got it!";
-    }
-    if(userGuess === computerFlower){
-      console.log("yay!");
-      userGuesses.textContent = "Correct, you got it!";
+    } else {
+      userGuesses.textContent = "Not quite";
     }
 });
 
@@ -91,9 +84,9 @@ startAgainButton.addEventListener("click", () => {
   guessField.value = "";
   userGuesses.textContent = "";
   firstLetterClue.textContent = "";
-  fishButton.classList.toggle("selected");
-  fruitButton.classList.toggle("selected");
-  flowerButton.classList.toggle("selected");
+  //fishButton.classList.toggle("selected");
+  //fruitButton.classList.toggle("selected");
+  //flowerButton.classList.toggle("selected");
 
   fishButton.disabled = false;
   fruitButton.disabled = false;
