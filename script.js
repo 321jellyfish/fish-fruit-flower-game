@@ -34,15 +34,7 @@ let flowerArray=["Anemone", "Aster", "Azalea", "Buttercup", "Carnation", "Chrysa
 
 
 firstLetter.addEventListener("click", () => {
-  if(fishButton.disabled === false){
-    firstLetterClue.textContent = computerChoice[0];
-  }
-  if(fruitButton.disabled === false){
-    firstLetterClue.textContent = computerChoice[0];
-  }
-  if(flowerButton.disabled === false){
-    firstLetterClue.textContent = computerChoice[0];
-  }
+  firstLetterClue.textContent = computerChoice[0];
 });
 
 fishButton.addEventListener("click", () => {
