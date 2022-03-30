@@ -5,6 +5,7 @@ const flowerButton = document.querySelector("#flower-button");
 const firstLetter = document.querySelector("#first-letter");
 const startAgainButton = document.querySelector("#start-again-button");
 const userGuesses = document.querySelector(".userGuesses");
+const guessResponses = document.querySelector(".guessResponses")
 const firstLetterClue = document.querySelector("#first-letter-clue");
 
 // const submitButton = document.querySelector("#submit-button");
@@ -82,15 +83,15 @@ flowerButton.addEventListener("click", () => {
 guessSubmit.addEventListener("click", () => {
     const userGuess = guessField.value;
     if(userGuess.toUpperCase() === computerChoice.toUpperCase()){
-      userGuesses.textContent = "Correct, you got it!";
+      guessResponses.textContent = "Correct, you got it!";
       firstLetter.disabled = true;
       guessSubmit.disabled = true;
       guessField.disabled = true;
-    } 
-    if((userGuess === "")||(userGuess === " ")){
-      userGuesses.textContent = "Please submit a guess";
+    } else if((userGuess === "")||(userGuess === " ")){
+      guessResponses.textContent = "Please submit a guess";
     } else {
-      userGuesses.textContent = "Not quite";
+      guessResponses.textContent = "Incorrect guesses:";
+      userGuesses.textContent = userGuess;
     }
 });
 

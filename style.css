@@ -83,3 +83,7 @@ p {
 .guessField {
     padding: 5px;
 }
+
+.guessResponses {
+    font-weight: bolder;
+}
