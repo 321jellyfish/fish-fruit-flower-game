@@ -75,6 +75,10 @@ flowerButton.addEventListener("click", () => {
     chooseAnswer(flowerArray);
   });  
 
+ 
+
+  
+
 guessSubmit.addEventListener("click", () => {
     const userGuess = guessField.value;
     if(userGuess.toUpperCase() === computerChoice.toUpperCase()){
@@ -82,6 +86,9 @@ guessSubmit.addEventListener("click", () => {
       firstLetter.disabled = true;
       guessSubmit.disabled = true;
       guessField.disabled = true;
+    } 
+    if((userGuess === "")||(userGuess === " ")){
+      userGuesses.textContent = "Please submit a guess";
     } else {
       userGuesses.textContent = "Not quite";
     }
