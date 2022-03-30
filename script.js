@@ -16,6 +16,8 @@ let computerFish = "";
 let computerFruit = "";
 let computerFlower = "";
 
+guessField.disabled = true;
+guessSubmit.disabled = true;
 firstLetter.disabled = true;
 // submitButton.disabled = true;
 startAgainButton.disabled = true;
@@ -43,8 +45,6 @@ firstLetter.addEventListener("click", () => {
   if(flowerButton.disabled === false){
     firstLetterClue.textContent = computerFlower[0];
   }
-  
-
 });
 
 fishButton.addEventListener("click", () => {
