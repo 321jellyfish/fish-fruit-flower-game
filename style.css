@@ -42,8 +42,9 @@ input:disabled {
     border-color: grey;
 }
 
+
 .selected {
-    background-color: lightgray;
+    background-color: teal;
     border-style: solid, gray, 5px;
 }
 
