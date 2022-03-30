@@ -33,7 +33,6 @@ let flowerArray=["Anemone", "Aster", "Azalea", "Buttercup", "Carnation", "Chrysa
 "Marigold", "Peony", "Pansy", "Snapdragon", "Tulip"];
 
 
-
 firstLetter.addEventListener("click", () => {
   firstLetterClue.textContent = computerChoice[0];
   guessField.focus();
@@ -89,9 +88,14 @@ guessSubmit.addEventListener("click", () => {
       guessField.disabled = true;
     } else if((userGuess === "")||(userGuess === " ")){
       guessResponses.textContent = "Please submit a guess";
+      guessField.focus();
     } else {
       guessResponses.textContent = "Incorrect guesses:";
-      userGuesses.textContent = userGuess;
+      guessField.value = "";
+      const userGuessPrint = document.createElement("p");
+      userGuessPrint.textContent = userGuess;
+      userGuesses.appendChild(userGuessPrint);
+      guessField.focus();
     }
 });
 
