@@ -12,7 +12,9 @@ const firstLetterClue = document.querySelector("#first-letter-clue");
 const guessSubmit = document.querySelector('.guessSubmit');
 const guessField = document.querySelector('.guessField');
 
+let computerFish = "";
 let computerFruit = "";
+let computerFlower = "";
 
 firstLetter.disabled = true;
 // submitButton.disabled = true;
@@ -32,14 +34,33 @@ let flower=["Anemone", "Aster", "Azalea", "Buttercup", "Carnation", "Chrysanthem
 
 
 firstLetter.addEventListener("click", () => {
-  firstLetterClue.textContent = computerFruit[0];
+  if(fishButton.disabled === false){
+    firstLetterClue.textContent = computerFish[0];
+  }
+  if(fruitButton.disabled === false){
+    firstLetterClue.textContent = computerFruit[0];
+  }
+  if(flowerButton.disabled === false){
+    firstLetterClue.textContent = computerFlower[0];
+  }
+  
+
 });
 
 fishButton.addEventListener("click", () => {
   fishButton.classList.add("selected");
-});
+  enableButtons();
+  guessField.focus();
+  fruitButton.disabled = true;
+  flowerButton.disabled = true;
 
-fishButton.disabled = true;
+  let randomNumber = Math.floor((Math.random() * fish.length));
+  console.log(randomNumber);
+  computerFish = fish[randomNumber];
+  console.log({computerFish});
+  return computerFish;
+
+});
 
 fruitButton.addEventListener("click", () => {
   fruitButton.classList.add("selected");
@@ -55,20 +76,38 @@ fruitButton.addEventListener("click", () => {
   return computerFruit;
 });
 
+flowerButton.addEventListener("click", () => {
+    flowerButton.classList.add("selected");
+    enableButtons();
+    guessField.focus();
+    fruitButton.disabled = true;
+    fishButton.disabled = true;
+  
+    let randomNumber = Math.floor((Math.random() * flower.length));
+    console.log(randomNumber);
+    computerFlower = flower[randomNumber];
+    console.log({computerFlower});
+    return computerFlower;
+    
+  });  
+
 guessSubmit.addEventListener("click", () => {
-  const userGuess = guessField.value;
-  if(userGuess === computerFruit){
-    console.log("yay!");
-    userGuesses.textContent = "Correct, you got it!";
-  }
+    const userGuess = guessField.value;
+    if(userGuess === computerFish){
+      console.log("yay!");
+      userGuesses.textContent = "Correct, you got it!";
+    }
+    if(userGuess === computerFruit){
+      console.log("yay!");
+      userGuesses.textContent = "Correct, you got it!";
+    }
+    if(userGuess === computerFlower){
+      console.log("yay!");
+      userGuesses.textContent = "Correct, you got it!";
+    }
 });
 
 
-
-flowerButton.addEventListener("click", () => {
-    flowerButton.classList.add("selected");
-    
-  });  
 
 
 startAgainButton.addEventListener("click", () => {
@@ -77,7 +116,13 @@ startAgainButton.addEventListener("click", () => {
   guessField.value = "";
   userGuesses.textContent = "";
   firstLetterClue.textContent = "";
+  fishButton.classList.toggle("selected");
   fruitButton.classList.toggle("selected");
+  flowerButton.classList.toggle("selected");
+
+  fishButton.disabled = false;
+  fruitButton.disabled = false;
+  flowerButton.disabled = false;
 })
 
 
