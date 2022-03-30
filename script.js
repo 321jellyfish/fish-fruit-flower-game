@@ -82,7 +82,7 @@ flowerButton.addEventListener("click", () => {
 guessSubmit.addEventListener("click", () => {
     const userGuess = guessField.value;
     if(userGuess.toUpperCase() === computerChoice.toUpperCase()){
-      guessResponses.textContent = "Correct, you got it!";
+      guessResponses.textContent = `Correct, you got it! It was ${computerChoice}`;
       firstLetter.disabled = true;
       guessSubmit.disabled = true;
       guessField.disabled = true;
@@ -106,6 +106,7 @@ startAgainButton.addEventListener("click", () => {
   firstLetter.disabled = true;
   startAgainButton.disabled = true;
   guessField.value = "";
+  guessResponses.textContent = "";
   userGuesses.textContent = "";
   firstLetterClue.textContent = "";
   //fishButton.classList.toggle("selected");
