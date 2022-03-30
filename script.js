@@ -40,6 +40,8 @@ firstLetter.addEventListener("click", () => {
 
 fishButton.addEventListener("click", () => {
   fishButton.classList.add("selected");
+  fruitButton.classList.add("unselected");
+  flowerButton.classList.add("unselected");
   enableButtons();
   guessField.focus();
   fruitButton.disabled = true;
@@ -50,6 +52,9 @@ fishButton.addEventListener("click", () => {
 
 fruitButton.addEventListener("click", () => {
   fruitButton.classList.add("selected");
+  fishButton.classList.add("unselected");
+  flowerButton.classList.add("unselected");
+
   enableButtons();
   guessField.focus();
   fishButton.disabled = true;
@@ -59,6 +64,9 @@ fruitButton.addEventListener("click", () => {
 
 flowerButton.addEventListener("click", () => {
     flowerButton.classList.add("selected");
+    fishButton.classList.add("unselected");
+    fruitButton.classList.add("unselected");
+    
     enableButtons();
     guessField.focus();
     fruitButton.disabled = true;
@@ -91,6 +99,9 @@ startAgainButton.addEventListener("click", () => {
   fishButton.classList.remove("selected");
   fruitButton.classList.remove("selected");
   flowerButton.classList.remove("selected");
+  fishButton.classList.remove("unselected");
+  fruitButton.classList.remove("unselected");
+  flowerButton.classList.remove("unselected");
 
   fishButton.disabled = false;
   fruitButton.disabled = false;
