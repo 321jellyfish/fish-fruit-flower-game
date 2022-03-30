@@ -77,7 +77,7 @@ flowerButton.addEventListener("click", () => {
 
  
 
-  
+let counter = 0;
 
 guessSubmit.addEventListener("click", () => {
     const userGuess = guessField.value;
@@ -86,6 +86,7 @@ guessSubmit.addEventListener("click", () => {
       firstLetter.disabled = true;
       guessSubmit.disabled = true;
       guessField.disabled = true;
+      counter++;
     } else if((userGuess === "")||(userGuess === " ")){
       guessResponses.textContent = "Please submit a guess";
       guessField.focus();
@@ -96,7 +97,16 @@ guessSubmit.addEventListener("click", () => {
       userGuessPrint.textContent = userGuess;
       userGuesses.appendChild(userGuessPrint);
       guessField.focus();
+      counter++;
     }
+
+    if(counter === 20){
+      guessResponses.textContent = `Too many guesses you lose, it was ${computerChoice}`;
+      firstLetter.disabled = true;
+      guessSubmit.disabled = true;
+      guessField.disabled = true;
+    }
+    
 });
 
 
