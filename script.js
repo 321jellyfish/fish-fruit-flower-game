@@ -79,6 +79,9 @@ guessSubmit.addEventListener("click", () => {
     const userGuess = guessField.value;
     if(userGuess === computerChoice){
       userGuesses.textContent = "Correct, you got it!";
+      firstLetter.disabled = true;
+      guessSubmit.disabled = true;
+      guessField.disabled = true;
     } else {
       userGuesses.textContent = "Not quite";
     }
