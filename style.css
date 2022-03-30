@@ -42,9 +42,12 @@ input:disabled {
     border-color: grey;
 }
 
+button:disabled {
+    background-color: lightgray;
+}
 
 .selected {
-    background-color: teal;
+    background-color: cadetblue;
     border-style: solid, gray, 5px;
 }
 
