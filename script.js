@@ -1,4 +1,3 @@
-/*Create categoryButtons*/
 const fishButton = document.querySelector("#fish-button");
 const fruitButton = document.querySelector("#fruit-button");
 const flowerButton = document.querySelector("#flower-button");
@@ -8,7 +7,6 @@ const userGuesses = document.querySelector(".userGuesses");
 const guessResponses = document.querySelector(".guessResponses")
 const firstLetterClue = document.querySelector("#first-letter-clue");
 
-// const submitButton = document.querySelector("#submit-button");
 
 const guessSubmit = document.querySelector('.guessSubmit');
 const guessField = document.querySelector('.guessField');
@@ -18,7 +16,6 @@ let computerChoice = "";
 guessField.disabled = true;
 guessSubmit.disabled = true;
 firstLetter.disabled = true;
-// submitButton.disabled = true;
 startAgainButton.disabled = true;
 
 let fishArray=["Anchovy", "Bass", "Carp", "Catfish", "Clam", "Cod", "Crab", "Flounder", "Haddock", "Hake", "Halibut", "Herring", "Lobster",
@@ -120,9 +117,6 @@ startAgainButton.addEventListener("click", () => {
   guessResponses.textContent = "";
   userGuesses.textContent = "";
   firstLetterClue.textContent = "";
-  //fishButton.classList.toggle("selected");
-  //fruitButton.classList.toggle("selected");
-  //flowerButton.classList.toggle("selected");
   fishButton.classList.remove("selected");
   fruitButton.classList.remove("selected");
   flowerButton.classList.remove("selected");
@@ -134,6 +128,7 @@ startAgainButton.addEventListener("click", () => {
   fruitButton.disabled = false;
   flowerButton.disabled = false;
   guessSubmit.disabled = true;
+  counter = 0;
 })
 
 
@@ -153,6 +148,4 @@ function chooseAnswer(answerArray){
 }
 
 
-/* Problems to solve:
-- make buttons clickable 
-- decide on design on buttons*/
+
